@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link  rel="shortcut icon"type="image/jpg"s href="images/icon.png"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+<body>
+
+    <!--Move to up button-->
+     
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+
+    <!--navigation menu-->
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="#">Portfolio.</a></div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <div class="cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </ul>
+            <div class="media-icons">
+                <a href="https://www.facebook.com/sabin.dumre" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/sabDUMre" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/sabindumre" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <!--home section start-->
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="text">
+                <div class="text-one">Hello,</div>
+                <div class="text-two">I'm Sabin Dumre</div>
+                <div class="text-three">Computer Engineering</div>
+                <div class="text-four">From Kathmandu, Nepal</div>
+            </div>
+
+            
+            <div class="button">
+                
+                <button class="open-button" onclick="openform()"><a href="#contact">Hire Me</a></button>
+                
+                <div class="form-popup" id="myform">
+                    <form action="" class="form-container">
+                        <h3>Your details</h3>
+                        <input type="text" placeholder="Name" class="box">
+                        <input type="email" placeholder="Email" class="box">
+                        <input type="text" placeholder="Project" class="box">
+                        <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                        <div class="button">
+                         <button>Send <I class="fa fa-paper-plane"></I></button>
+                         <button type="button" class="btn cancel" onclick="closeform()">Close</button>
+                        </div>
+                
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About section start-->
+    <section class="about" id="about">
+        <div class="content">
+            <div class="title"><span>About ME</span></div>
+            <div class="about-details">
+                <div class="left">
+                    <img src="images/dumre4.jpg" alt="portfolio">
+                </div>
+                <div class="right">
+                    <div class="topic">Designing Is My Passion</div>
+                    <p>
+                I am originally from Syangja, Nepal and currently live in Banasthali Kathmandu, Nepal.
+				I have passed my +2 from uniglobe college and i am currently studying Computer engineering in Advanced College of Engineering and Management. 
+                I'm studying computer engineering and i do enjoy it, most aspects of it.I cannot say that i enjoy all of this reading ,but what i really enjoy 
+                is working on projects, what i mean is discussing and like to exchanges ideas with other.
+                    </p>
+                    <div class="button">
+                        <button onclick="location.href='documents/dumresarkaar-resume.pdf';">Download CV</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--my skill sections starts-->
+    <section class="skills" id="skills">
+        <div class="content">
+            <div class="title"><span id="skills">My Skills</span></div>
+            <div class="skills-details">
+                <div class="text">
+                    <div class="topic">Skills Reflects Our Knowledge</div>
+                    <p>Skills are the expertise or talent needed in order to do a job 
+                        or task. ... There are many different types of skills that can help you succeed at all aspects of your life whether
+                         it's school, work, or even a sport or hobby. Skills are what makes you confident and independent in life and are 
+                         essential for success.</p>
+                        <div class="experience">
+                            <div class="num">not</div>
+                            <div class="exp">Yet  <br> Experienced</div>
+                          </div>
+                        </div>
+                        <div class="boxes">
+                          <div class="box">
+                            <div class="topic">HTML</div>
+                            <div class="per">80%</div>
+                          </div>
+                          <div class="box">
+                            <div class="topic">CSS</div>
+                            <div class="per">60%</div>
+                          </div><br><br>
+                          <div class="box">
+                            <div class="topic">Javascript</div>
+                            <div class="per">40%</div>
+                          </div>
+                          <div class="box">
+                            <div class="topic">Bootstrap</div>
+                            <div class="per">50%</div>
+                </div></div>
+            </div>
+        </div>
+       
+        
+    </section> 
+
+    <!--education -->
+    <section class="education" id="education">
+        <div class="content">
+            <div class="title"><span>My Educations</span></div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa  fa-graduation-cap"></i>
+                    </div>
+                    <div class="topic">Schooling</div>
+                    <p>--studied from<b>Peace Zone Academy.</b> <br>Walling, Syangja</p>
+                    
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="topic">High School</div>
+                    <p>--studied +2 from <b>Uniglobe College</b><br> Kamaladi, Kathmandu</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <div class="topic">Web Development</div>
+                        <p>Web development is the building and maintenance of websites; 
+                            it's the work that happens behind the scenes to make a website 
+                            look great, work fast and perform well with a seamless user experience.<br>learning from online </p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="topic">Bachelor</div>
+                    <p>--studying Bachelor Engineering in Computer Science from <B>Advanced
+                        college of Engineering and Management</B>Kupandol, Kathmandu<br></p>
+                </div>
+            </div>
+            
+        </div>
+
+    </section><br><br>
+
+    <!-- contact me section-->
+    <section class="contact" id="contact">
+        <div class="content">
+            <div class="title"><span>Contact Me</span></div>
+            <div class="text">
+                <div class="topic">Have any Projects?</div>
+                <div class="row">
+
+                    <div class="left">
+                        <div class="content">
+                            <h3 class="title">Contact Info</h3>
+                            <div class="info">
+                                <h3><i class="fa fa-envelope"></i> dumresabin@gmail.com</h3>
+                                <h3><i class="fa fa-phone"></i> +977 9863646919</h3>
+                                <h3><i class="fa fa-map-marker"></i> Kathmandu, Nepal</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="right">
+
+                        <form action="">
+                            <input type="text" placeholder="Name" class="box">
+                            <input type="email" placeholder="Email" class="box">
+                            <input type="text" placeholder="Project" class="box">
+                            <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
+                            <div class="button">
+                                <button>Send <I class="fa fa-paper-plane"></I></button>
+                            </div>
+                    
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer section-->
+    <footer>
+        <div class="text">
+            <span>Created By <a href="#">dumresarkaar</a> | © 2022 All Rights Reserved.</span>
+        </div>
+    </footer>
+   
+    <script src="script.js"></script>
+</body>
+</html>

@@ -57,3 +57,11 @@ function openform(){
 function closeform(){
   document.getElementById("myform").style.display="none";
 }
+
+//typing animation script
+var typed = new Typed(".typing",{
+  strings:["Computer Engineer","Developer","Designer","Freelancer","Gamer"],
+  typespeed:100,
+  backspeed:40,
+  loop:true
+});

@@ -93,7 +93,7 @@ nav.sticky .menu a:hover{
     margin: 0 6px;
 }
 nav.sticky .media-icons a{
-    color: var(--white-color);
+    color: var(--black-color);
 }
 
 /* side naigation Menu Butto CSS */

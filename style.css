@@ -563,6 +563,7 @@ footer .text span a:hover{
 }
 .contact .row .content .info h3 i{
   padding-right: 1rem;
+  align-items: center;
   color: var(--primary-color);
 }
 .contact .row .right{   

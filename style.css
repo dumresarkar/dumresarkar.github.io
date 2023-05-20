@@ -294,13 +294,13 @@ section .title span::after{
     margin:0 6px;
   }
   .skills-details .boxes{
-    width:45%;
+    /* width:45%; */
     display:flex;
     flex-wrap: wrap;
     justify-content:space-between;
   }
   .skills-details .box{
-    width:calc(100% / 2 - 20px);
+    /* width:calc(100% / 2 - 20px); */
     margin:20px 0;
   }
   .skills-details .boxes .topic{
@@ -313,14 +313,14 @@ section .title span::after{
   }
 
 /* my educations*/
-.education .boxes{
+/* .education .boxes{
   display:flex; 
   flex-wrap: wrap;
   justify-content:space-between;
-}
+} */
 .education .boxes .box{
   margin:20px 0;
-  width:calc(100% / 2 - 20px);
+  /* width:calc(100% / 2 - 20px); */
   text-align: center;
   border-radius: 12px;
   padding:30px 10px;
@@ -329,7 +329,7 @@ section .title span::after{
   transition: all 0.4s ease;
 }
 .education .boxes .box:hover{
-  background: var(--primary-color);
+  background-color: var(--primary-color);
   color:var(--white-color);
 }
 .education .boxes .box .icon{

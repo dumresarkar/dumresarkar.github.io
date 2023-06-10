@@ -1,0 +1,80 @@
+﻿body {
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.contact .info-box i {
+    font-size: 32px;
+    color: #4eb478;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #cbe9d8;
+    float: left;
+}
+
+.contact .info-box h3 {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0 10px 68px;
+}
+
+.contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin: 0 0 0 68px;
+}
+
+
+.outsourcing .content {
+    background-color: #f6f9ff;
+    padding: 40px;
+}
+
+.outsourcing h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #012970;
+}
+
+.outsourcing p {
+    margin: 15px 0 30px 0;
+    line-height: 24px;
+}
+
+
+.validate {
+    display: block !important;
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 15px;
+}
+
+.required-icon {
+    float: right;
+    width: 40px;
+    text-align: center;
+    font-weight: normal;
+    color: red;
+}
+
+.validate-error {
+    background-color: antiquewhite;
+}
+
+.input-contact {
+    padding-top: 20px;
+    padding-left: 10px;
+}

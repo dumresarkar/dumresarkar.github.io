@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+
+@media screen and (max-width: 1024px) {
+    /* 1024pxまでの幅の場合に適応される for PC */
+/*    .table-header-contact {
+        padding-top: 20px;
+    }*/
+
+}
+
+@media screen and (max-width: 768px) {
+    /* 768pxまでの幅の場合に適応される for iPad */
+    .table-row-contact {
+        display: block;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+    }
+
+
+}
+
+@media screen and (max-width: 480px) {
+    /* 480pxまでの幅の場合に適応される for iPhone Landscape　(iPhone 横)　*/
+    .navbar-brand {
+        font-size: 1.15rem !important;
+    }
+    .input-contact {
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* 320pxまでの幅の場合に適応される */
+    .navbar-brand {
+        font-size: 0.92rem !important;
+    }
+    .input-contact {
+        padding-bottom: 20px;
+    }
+}

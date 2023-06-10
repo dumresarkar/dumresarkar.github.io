@@ -1,0 +1,258 @@
+﻿<section id="inquiry" style="padding:0 0 60px 0;">
+
+    <div class="container">
+
+        <header class="section-header">
+            <div>Please enter your inquiry and click the "Message Confirm" button.</div>
+        </header>
+
+        <div class="row gy-4">
+            <form class="contact-form mail-form" role="form" action="/contactconfirm/" method="POST" enctype="multipart/form-data">
+                <div class="row" style="--bs-gutter-x: 0;">
+                    @if (Model.ErrorList.Count >= 1)
+                    {
+                        <div class="col-md-3 col-sm-12">
+                        </div>
+                        <div class="col-md-9 col-sm-12">
+                            <div class="validate" style="font-size:x-large;font-weight:bold;">Please check the information you have entered.</div>
+                        </div>
+                    }
+                    <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Name
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtName") ? " validate-error" : "")">
+                            <input type="text" name="name" placeholder="Name" class="form-control" value="@Model.Contact.NAME">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("txtName") ? Model.ErrorList["txtName"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Email
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtEmail") ? " validate-error" : "")">
+                            <input type="text" name="email" placeholder="Email" class="form-control" value="@Model.Contact.EMAIL">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("txtEmail") ? Model.ErrorList["txtEmail"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Subject
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtSubject") ? " validate-error" : "")">
+                            <input type="text" name="subject" placeholder="Subject" class="form-control" value="@Model.Contact.SUBJECT">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("txtSubject") ? Model.ErrorList["txtSubject"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Message
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtMessage") ? " validate-error" : "")">
+                            <textarea name="message" placeholder="Message" rows="10" class="form-control">@Html.Raw(Model.Contact.MESSAGE)</textarea>
+                            <div class="validate" style="">@(Model.ErrorList.ContainsKey("txtMessage") ? Model.ErrorList["txtMessage"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Address
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtAddress") ? " validate-error" : "")">
+                            <input type="text" name="address" placeholder="Address" class="form-control" value="@Model.Contact.ADDRESS">
+                            <div class="validate" style="">@(Model.ErrorList.ContainsKey("txtAddress") ? Model.ErrorList["txtAddress"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Hobbies
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtHobbies") ? " validate-error" : "")" style="margin-bottom:2%">
+                            @if (Model.Contact.HOBBIES == null)
+                            {
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="1" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault" selected>
+                                        Gamming
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="2" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Reading
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="3" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Editing
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="4" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Travelling
+                                    </label>
+                                </div> <div class="validate">@(Model.ErrorList.ContainsKey("txtHobbies") ? Model.ErrorList["txtHobbies"] : "")</div>
+                            }
+                            else
+                            { <div>
+                                    <input class="form-check-input" name="hob" type="checkbox" value="1" @(Model.Contact.HOBBIES.Contains("1") ? "Checked" : "") id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault" selected>
+                                        Gamming
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="2" @(Model.Contact.HOBBIES.Contains("2") ? "Checked" : "") id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Reading
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="3" @(Model.Contact.HOBBIES.Contains("3") ? "Checked" : "") id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Editing
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="hob" type="checkbox" value="4" @(Model.Contact.HOBBIES.Contains("4") ? "Checked" : "") id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Travelling
+                                    </label>
+                                </div> <div class="validate">@(Model.ErrorList.ContainsKey("txtHobbies") ? Model.ErrorList["txtHobbies"] : "")</div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact ">
+                        Gender
+                    </div>
+                    <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtGender") ? " validate-error" : "")" style="margin-bottom:2%">
+                        <div class="form-check">
+                            @if (Model.Contact.GENDER == "1")
+                            {
+                                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="1" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Male<br>
+                                </label>
+                            }
+                            else
+                            { <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Male<br>
+                                </label>
+                            }
+                        </div>
+                        <div class="form-check">
+                            @if (Model.Contact.GENDER == "2")
+                            {
+
+                                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Female
+                                </label>
+                            }
+                            else
+                            {
+                                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Female
+                                </label>
+                            }
+
+                        </div>
+                        <div class="validate" style="">@(Model.ErrorList.ContainsKey("txtGender") ? Model.ErrorList["txtGender"] : "")</div>
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Your Backstory
+                    </div>
+                    <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtBackstory") ? " validate-error" : "")">
+                        <textarea name="backstory" placeholder="Backstory" rows="10" class="form-control">@Html.Raw(Model.Contact.MESSAGE)</textarea>
+                        <div class="validate" style="">@(Model.ErrorList.ContainsKey("txtBackstory") ? Model.ErrorList["txtBackstory"] : "")</div>
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Choose you course
+                    </div>
+                    <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtCourse") ? " validate-error" : "")" @*style="margin-bottom:2%*@>
+                        <select name="course" id="course">
+                            <option value=""></option>
+                            @if (Model.Contact.COURSE == "1")
+                            {
+
+                                <option value="1" selected>HTML</option>
+                            }
+                            else
+                            {
+                                <option value="1">HTML</option>
+
+                            }
+                            @if (Model.Contact.COURSE == "2")
+                            {
+
+                                <option value="2" selected>JAVA</option>
+                            }
+                            else
+                            {
+                                <option value="2">JAVA</option>
+                            }
+                            @if (Model.Contact.COURSE == "3")
+                            {
+
+                                <option value="3" selected>JAVASCRIPT</option>
+                            }
+                            else
+                            {
+                                <option value="3">JAVASCRIPT</option>
+                            }
+                            @if (Model.Contact.COURSE == "4")
+                            {
+
+                                <option value="4" selected>Python</option>
+                            }
+                            else
+                            {
+                                <option value="4">Python</option>
+                            }
+                        </select>
+                        <div class="validate" style="">@(Model.ErrorList.ContainsKey("txtCourse") ? Model.ErrorList["txtCourse"] : "")</div>
+                    </div>
+
+                </div>
+                <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Upload Picture
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtFile") ? " validate-error" : "")">
+                            <input type="file" name="pic" class="form-control"  placeholder="upload image" accept="image/png, image/gif, image/jpeg" id="mypic" value="@Model.Contact.PICTURE">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("txtPicture") ? Model.ErrorList["txtPicture"] : "")</div>
+                        </div>
+                    </div>
+                <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Upload File
+                    </div>
+                    <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("txtFile") ? " validate-error" : "")">
+                        <input type="file" name="file" class="form-control" value="@Model.Contact.FILE">
+                        <div class="validate">@(Model.ErrorList.ContainsKey("txtFile") ? Model.ErrorList["txtFile"] : "")</div>
+                    </div>
+                </div>
+
+
+                <br />
+                <div class="form-send">
+                    <button type="submit" class="btn btn-large">Message Confirm</button>
+                </div>
+                <input type="hidden" name="hdnContactPageFlg" value="@(ViewBag.ContactPageFlg)" />
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+    </div>
+
+
+</section>

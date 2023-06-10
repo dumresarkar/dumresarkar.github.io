@@ -1,0 +1,156 @@
+﻿@model CompanySite.Models.Vacancy
+
+@{
+    ViewBag.Title = "Message Send Completed";
+    ViewBag.MenuHiddenFlg = "1";
+}
+
+<style type="text/css">
+    .table-body-contact {
+        min-height: 50px;
+        padding: 20px;
+    }
+
+    .btn-edit {
+        float: left;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 120px;
+        background-color: dimgrey !important;
+    }
+
+    .btn-send {
+        clear: both;
+        width: 200px;
+    }
+
+    .note-info {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+</style>
+
+<!-- ======= vacancy Section ======= -->
+<section id="vacancy" style="margin-top:60px;">
+
+    <div class="container">
+
+        <div class="row gy-4">
+            <div class="row" style="--bs-gutter-x: 0;">
+                <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Name
+                    </div>
+                    <div class="col-md-9 col-sm-12 table-body-contact">
+                        @Model.soleVacancy.Rows[0]["NAME"]
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Email
+                    </div>
+                    <div class="col-md-9 col-sm-12 table-body-contact">
+                        @Model.soleVacancy.Rows[0]["EMAIL"]
+
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Mobile
+                    </div>
+                    <div class="col-md-9 col-sm-12 table-body-contact">
+                        @Model.soleVacancy.Rows[0]["MOBILE"]
+
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        About Yourself
+                    </div>
+                    <div class="col-md-9 col-sm-12 table-body-contact">
+                        @Model.soleVacancy.Rows[0]["ABOUT_YOURSELF"]
+                    </div>
+                </div>
+
+                @*added*@
+
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Age
+                    </div>
+                    <div class="col-md-9 col-sm-12 table-body-contact">
+                        @Model.soleVacancy.Rows[0]["AGE"]
+                    </div>
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Gender
+                    </div>
+
+                    @if (@Model.soleVacancy.Rows[0]["GENDER"] == "1")
+                    {
+                        <div class="col-md-9 col-sm-12 table-body-contact">
+                            Male
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-9 col-sm-12 table-body-contact">
+                            Female
+                        </div>
+                    }
+                </div>
+                <div class="table-row-contact">
+                    <div class="col-md-3 col-sm-12 table-header-contact">
+                        Skills
+                    </div>
+                    @*@Model.Contact.INTERESTED*@
+                    <div class="col-md-9 col-sm-12 table-body-contact">
+                        @foreach (String item in Model.soleSkills)
+                        {
+                            if (@item == "1")
+                            {
+                                <div>
+                                    Java<br />
+                                </div>
+                            }
+                            else if (@item == "2")
+                            {
+                                <div>
+                                    Python<br />
+                                </div>
+                            }
+                            else if (@item == "3")
+                            {
+                                <div>
+                                    Dot net<br />
+                                </div>
+                            }
+                            else if (@item == "4")
+                            {
+                                <div>
+                                    Blockchain<br />
+                                </div>
+                            }
+                            else if (item == "5")
+                            {
+                                <div>
+                                    React<br />
+                                </div>
+                            }
+                            else
+                            {
+                                <div>
+                                    NA
+                                </div>
+                            }
+                        }
+                    </div>
+
+                    @*added end*@
+                </div>
+                <br />
+            </div>
+        </div>
+
+</section><!-- End inquiry Section -->

@@ -1,0 +1,192 @@
+﻿@model CompanySite.Models.Newpage
+@{
+    ViewBag.Title = "Register";
+}
+
+<section id="Register" style="padding:0 0 60px 0;">
+    <div class="container">
+
+        <header class="section-header" style="margin-top:80px">
+            <div>*** Please Enter your information and click the "Register Confirm" button. ***</div>
+        </header>
+        <div class="row gy-4 ">
+            <form class="contact-form mail-form" role="form" action="/newpage/submitconfirm/" method="POST" enctype="multipart/form-data">
+                <div style="background-color:#c3d7ff;">
+                    @if (Model.ErrorList.Count >= 1)
+                    {
+                        <div class="col-md-3 col-sm-12">
+                        </div>
+                        <div class="col-md-9 col-sm-12">
+                            <div class="validate" style="text-align:center; font-size:x-large;font-weight:bold;">Please check the information you have entered.</div>
+                        </div>
+                    }
+                    <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Full Name
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("name") ? " validate-error" : "")">
+                            <input type="text" name="name" placeholder="Full Name" class="form-control" value="@Model.Register.FULL_NAME">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("name") ? Model.ErrorList["name"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Email
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("email") ? " validate-error" : "")">
+                            <input type="text" name="email" placeholder="Email" class="form-control" value="@Model.Register.EMAIL">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("email") ? Model.ErrorList["email"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Contact Number
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("number") ? " validate-error" : "")">
+                            <input type="number" name="number" placeholder="Contact Number" class="form-control" value="@Model.Register.CONTACT_NUMBER">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("number") ? Model.ErrorList["number"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Address
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("address") ? " validate-error" : "")">
+                            <input type="text" name="address" placeholder="Address" class="form-control" value="@Model.Register.ADDRESS">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("address") ? Model.ErrorList["address"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Date Of Birth
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("date_of_birth") ? " validate-error" : "")">
+                            <input type="date" name="date_of_birth" placeholder="Date of Birth" class="form-control" value="@Model.Register.DATE_OF_BIRTH">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("date_of_birth") ? Model.ErrorList["date_of_birth"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Gender
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact @(Model.ErrorList.ContainsKey("txtGender") ? " validate-error" : "")">
+                            <div class="form-check">
+                                @if (Model.Register.GENDER == "1")
+                                {
+
+
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="1" checked><label class="form-check-label">
+                                        Male<br>
+                                    </label>
+                                }
+                                else
+                                {
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="1">
+                                    <label class="form-check-label">
+                                        Male<br>
+                                    </label>
+                                }
+
+                            </div>
+                            <div class="form-check">
+                                @if (Model.Register.GENDER == "2")
+                                {
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="2" checked>
+                                    <label class="form-check-label">
+                                        Female
+                                    </label>
+                                }
+                                else
+                                {
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="2">
+                                    <label class="form-check-label">
+                                        Female
+                                    </label>
+                                }
+
+                            </div>
+                            <div class="validate"> @(Model.ErrorList.ContainsKey("txtGender") ? Model.ErrorList["txtGender"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Explain Yourself
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("yourself") ? " validate-error" : "")">
+                            <textarea name="yourself" placeholder="Explain who are you and why should we hire you" rows="10" class="form-control">@Html.Raw(Model.Register.YOURSELF)</textarea>
+                            <div class="validate" style="">@(Model.ErrorList.ContainsKey("yourself") ? Model.ErrorList["yourself"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Upload Your Profile Picrure
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("pic") ? " validate-error" : "")">
+                            <input type="file" name="pic" class="form-control" placeholder="Upload Photo" accept="image/png, image/gif, image/jpeg" id="mypic" value="@Model.Register.PICTURE">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("pic") ? Model.ErrorList["pic"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Upload Resume
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact@(Model.ErrorList.ContainsKey("file") ? " validate-error" : "")">
+                            <input type="file" name="file" class="form-control" accept=".pdf" value="@Model.Register.FILE">
+                            <div class="validate">@(Model.ErrorList.ContainsKey("file") ? Model.ErrorList["file"] : "")</div>
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Your Skill
+                        </div>
+                        <div class="col-md-9 col-sm-12 input-contact @(Model.ErrorList.ContainsKey("txtSkills") ? " validate-error" : "")">
+                            <div class="form-check">
+                                <input class="form-check-input" name="skill" type="checkbox" value="1" @((@Model.Register.SKILL != null && @Model.Register.SKILL.Contains("1")) ? " checked" : "") id="flexCheckDefault">
+                                <label class="form-check-label">
+                                    Communication Skills
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="skill" type="checkbox" value="2" @((@Model.Register.SKILL != null && @Model.Register.SKILL.Contains("2")) ? " checked" : "") id="flexCheckChecked">
+                                <label class="form-check-label">
+                                    Teamwork
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="skill" type="checkbox" value="3" @((@Model.Register.SKILL != null && @Model.Register.SKILL.Contains("3")) ? " checked" : "") id="flexCheckChecked">
+                                <label class="form-check-label">
+                                    Ability to work under pressure
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="skill" type="checkbox" value="4" @((@Model.Register.SKILL != null && @Model.Register.SKILL.Contains("4")) ? " checked" : "") id="flexCheckChecked">
+                                <label class="form-check-label">
+                                    Creativity
+                                </label>
+                            </div> <div class="validate">@(Model.ErrorList.ContainsKey("txtSkills") ? Model.ErrorList["txtSkills"] : "")</div>
+
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-send">
+                    @if (APP_COMMON.CommonConst.Mode.PUB_C_REGIST.Equals(Model.Register.MODE))
+                    {
+
+
+                        <button type="submit" class="btn btn-large">Submit</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-large">Update</button>
+                    }
+
+                </div>
+                <input type="hidden" name="hdnContactPageFlg" value="@(ViewBag.ContactPageFlg)" />
+                @Html.AntiForgeryToken()
+            </form>
+
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,125 @@
+﻿@using System.Data;
+<section id="inquiry" style="padding:0 0 60px 0;">
+
+    <div class="container">
+
+        <header class="section-header">
+            <div>Review Your CV</div>
+        </header>
+        @foreach (DataRow item in Model.dataItem.Rows)
+        {
+            <div class="row gy-4">
+                <div class="card">
+                    <img src="~/Content/img/team/30-stephen.jpg" alt="Avatar" style="width:10%; ">
+                    <div class="container">
+                        <h4><b>@item["NAME"].ToString()</b></h4>
+                        <div style=" display: flex ">
+                            @foreach (DataRow items in Model.skillItem.Rows)
+                            {
+
+                                if (Convert.ToInt32(items["VACANCY_KEY_ID"]) == Convert.ToInt32(item["VACANCY_KEY_ID"]))
+                                {
+                                    if (items["VALUE"].ToString() == "1")
+                                    {
+                                        @*<p>Java</p>*@
+                                        <div style=" padding: 5px ">Java</div>
+                                    }
+                                    else if (items["VALUE"].ToString() == "2")
+                                    {
+                                        <div style=" padding: 5px ">Python</div>
+                                    }
+                                    else if (items["VALUE"].ToString() == "3")
+                                    {
+                                        @*<p>Dot Net</p>*@
+                                        <div style=" padding: 5px ">Dot Net</div>
+                                    }
+                                    else if (items["VALUE"].ToString() == "4")
+                                    {
+                                        @*<p>BlockChain</p>*@
+                                        <div style=" padding: 5px ">BlockChain</div>
+                                    }
+                                    else if (items["VALUE"].ToString() == "5")
+                                    {
+                                        @*<p>React</p>*@
+                                        <div style=" padding: 5px ">React</div>
+                                    }
+                                }
+
+                            }
+                        </div>
+                        <button class="button button1" onclick="location.href = '/Vacancy/ViewVacancy/@Convert.ToInt32(item["VACANCY_KEY_ID"])'">View</button>
+                        <button class="button button2" onclick="location.href = '/Vacancy/EditVacancy/@Convert.ToInt32(item["VACANCY_KEY_ID"])'">Edit</button>
+                        <button class="button button3" onclick="location.href = '/Vacancy/DeleteVacancy/@Convert.ToInt32(item["VACANCY_KEY_ID"])'">Delete</button>
+                    </div>
+                </div>
+            </div><br />
+        }
+    </div>
+
+</section>
+<style>
+    .card {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+    /* Add some padding inside the card container */
+    .container {
+        padding: 2px 16px;
+    }
+
+    .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+    }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+
+        .button2:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+
+    .button3 {
+        background-color: white;
+        color: black;
+        border: 2px solid red;
+    }
+
+        .button3:hover {
+            background-color: red;
+            color: white;
+        }
+</style>

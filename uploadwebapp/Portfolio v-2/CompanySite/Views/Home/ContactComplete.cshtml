@@ -1,0 +1,35 @@
+﻿@model CompanySite.Models.Home
+
+@{
+    ViewBag.Title = "Message Confirm";
+    ViewBag.MenuHiddenFlg = "1";
+}
+
+<style type="text/css">
+    .complete-message {
+        font-size: 20px;
+    }
+
+    .btn-default {
+        width: 150px;
+        background-color: lightblue;
+    }
+</style>
+
+<!-- ======= inquiry Section ======= -->
+<section id="inquiry" style="margin-top:60px;">
+
+    <div class="container">
+
+        <div class="row gy-4">
+            <h2 class="centered mb">Message Send Completed</h2>
+            <div class="text-center complete-message mb">
+                Thank you for your inquiry.
+            </div>
+            <div class="text-center mb">
+                <button type="button" class="btn btn-default" onclick="location.href = '/'">TOP</button>
+            </div>
+        </div>
+    </div>
+
+</section><!-- End inquiry Section -->

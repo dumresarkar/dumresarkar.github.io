@@ -1,0 +1,16 @@
+﻿@model CompanySite.Models.Home
+
+@{
+    ViewBag.Title = "問い合わせ";
+    ViewBag.MenuHiddenFlg = "1";
+    ViewBag.ContactPageFlg = "1";
+}
+
+<!-- ********** 問い合わせ入力 ********** -->
+<div class="container">
+    <h1 class="ptb centered">問い合わせ<br />Contact Us</h1>
+    @Html.Partial("~/Views/Shared/ContactInput.cshtml", Model)
+</div>
+
+<br />
+<br />

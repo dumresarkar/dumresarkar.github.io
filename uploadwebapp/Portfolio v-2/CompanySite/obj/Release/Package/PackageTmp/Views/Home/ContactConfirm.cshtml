@@ -1,0 +1,85 @@
+﻿@model CompanySite.Models.Home
+
+@{
+    ViewBag.Title = "Message Send Completed";
+    ViewBag.MenuHiddenFlg = "1";
+}
+
+<style type="text/css">
+    .table-body-contact {
+        min-height: 50px;
+        padding: 20px;
+    }
+
+    .btn-edit {
+        float: left;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 120px;
+        background-color: dimgrey !important;
+    }
+
+    .btn-send {
+        clear: both;
+        width: 200px;
+    }
+
+    .note-info {
+        margin-bottom: 10px;
+        text-align:center;
+    }
+</style>
+
+<!-- ======= inquiry Section ======= -->
+<section id="inquiry" style="margin-top:60px;">
+
+    <div class="container">
+
+        <div class="row gy-4">
+            <form class="contact-form mail-form" role="form" action="/contactcomplete/" method="POST">
+                <div class="note-info">※If you are satisfied with the following information, please click "Send Message".</div>
+                <div class="row" style="--bs-gutter-x: 0;">
+                    <div class="table-row-contact" style="border-top: 1px solid #ccc;">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Name
+                        </div>
+                        <div class="col-md-9 col-sm-12 table-body-contact">
+                            @Model.Contact.NAME
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Email
+                        </div>
+                        <div class="col-md-9 col-sm-12 table-body-contact">
+                            @Model.Contact.EMAIL
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Subject
+                        </div>
+                        <div class="col-md-9 col-sm-12 table-body-contact">
+                            @Model.Contact.SUBJECT
+                        </div>
+                    </div>
+                    <div class="table-row-contact">
+                        <div class="col-md-3 col-sm-12 table-header-contact">
+                            Message
+                        </div>
+                        <div class="col-md-9 col-sm-12 table-body-contact">
+                            @Model.Contact.MESSAGE
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-send">
+                    <button type="button" class="btn btn-large btn-edit" onclick="location.href = '@(Model.Contact.RedirectPage)'">Edit</button>
+                    <button type="submit" class="btn btn-large btn-send">Send Message</button>
+                </div>
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+    </div>
+
+</section><!-- End inquiry Section -->

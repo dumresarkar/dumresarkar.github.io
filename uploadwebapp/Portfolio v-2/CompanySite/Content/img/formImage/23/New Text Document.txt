@@ -1,9 +1,0 @@
-Edit button ----- x
-Verification ---- x
-checkbox-1 ---- x
-
-File upload --- x
-image upload ---- x
--2
-
-new form page-3 ---- x

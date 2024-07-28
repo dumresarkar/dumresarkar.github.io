@@ -65,3 +65,17 @@ var typed = new Typed(".typing",{
   backspeed:40,
   loop:true
 });
+
+
+// Send mail
+function sendMail(){
+
+  let parms={
+      name : document.getElementById("name").value,
+      email : document.getElementById("email").value,
+      subject : document.getElementById("subject").value,
+      message : document.getElementById("message").value
+  }
+
+  emailjs.send("service_2n4b7zg","template_6vtx8a4",parms).then(alert("Email Sent!!"))
+}
